@@ -1,10 +1,10 @@
 pipeline {
 agent any
 stages {
-  stage('Checkout') {
+  stage('Checkout and mail') {
     steps {
 // Checkout code from the Git repository
-     sh 'echo checking out'
+     mail bcc: '', body: 'test', cc: '', from: 'ajaychourasia01@gmail.com', replyTo: '', subject: 'test', to: 'ajaychourasia01@gmail.com'
    }
   }
 stage('Build') {
@@ -21,3 +21,5 @@ stage('Deploy') {
   }
  }
 }
+
+
